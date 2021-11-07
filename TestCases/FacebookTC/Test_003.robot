@@ -6,14 +6,14 @@ Resource  ../Resources/Resources1.robot
 
 
 *** Test Cases ***
-TC_002.1 Log Page Title
+TC_003.1 Log Page Title
     [Documentation]  This test case is to check kyewords with Arguments
     Start Browser and Maximize Window with Arguments  http://facebook.com  Chrome
     ${Title}=  Get Title
     Log  ${Title}
     Close Browser
 
-TC_002.2 Valid Page Title Check
+TC_003.2 Valid Page Title Check
     [Documentation]  This test case is to check Page Title
     ${Res}=  Start Browser and Maximize Window with Arguments Return Title  http://facebook.com  Chrome
     Log  ${Res}

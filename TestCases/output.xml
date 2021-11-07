@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.2 (Python 3.9.6 on win32)" generated="20211107 12:56:35.373" rpa="false" schemaversion="2">
+<suite id="s1" name="Test 002" source="D:\Python\RobotFrameworkProject\TestCases\Test_002.robot">
+<test id="s1-t1" name="TC_002.1 Valid Log Out">
+<kw name="Login Successfully" library="Resources1" type="SETUP">
+<kw name="Start Browser and Maximize Window" library="Resources1">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20211107 12:56:35.607" level="INFO">Opening browser 'Chrome' to base url 'https://opensource-demo.orangehrmlive.com'.</msg>
+<status status="PASS" starttime="20211107 12:56:35.607" endtime="20211107 12:56:40.331"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20211107 12:56:40.331" endtime="20211107 12:56:40.460"/>
+</kw>
+<status status="PASS" starttime="20211107 12:56:35.606" endtime="20211107 12:56:40.461"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:txtUsername</arg>
+<arg>Admin</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211107 12:56:40.461" level="INFO">Typing text 'Admin' into text field 'name:txtUsername'.</msg>
+<status status="PASS" starttime="20211107 12:56:40.461" endtime="20211107 12:56:40.560"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:txtPassword</arg>
+<arg>admin123</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211107 12:56:40.560" level="INFO">Typing text 'admin123' into text field 'name:txtPassword'.</msg>
+<status status="PASS" starttime="20211107 12:56:40.560" endtime="20211107 12:56:40.639"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>name:Submit</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20211107 12:56:40.640" level="INFO">Clicking button 'name:Submit'.</msg>
+<status status="PASS" starttime="20211107 12:56:40.639" endtime="20211107 12:56:43.257"/>
+</kw>
+<status status="PASS" starttime="20211107 12:56:35.606" endtime="20211107 12:56:43.257"/>
+</kw>
+<kw name="Logout Successfully" library="Resources1">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath://div[@id='branding']/a[@class='panelTrigger']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211107 12:56:43.258" level="INFO">Clicking element 'xpath://div[@id='branding']/a[@class='panelTrigger']'.</msg>
+<status status="PASS" starttime="20211107 12:56:43.258" endtime="20211107 12:56:43.318"/>
+</kw>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${LogoutEle}</var>
+<arg>//a[text()='Logout']</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20211107 12:56:43.332" level="INFO">${LogoutEle} = &lt;selenium.webdriver.remote.webelement.WebElement (session="f25fb62f8f01a80c8ec8d3d1fedb11f9", element="4d442980-6a97-4954-82ab-54e6828916e7")&gt;</msg>
+<status status="PASS" starttime="20211107 12:56:43.318" endtime="20211107 12:56:43.332"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>arguments[0].click();</arg>
+<arg>ARGUMENTS</arg>
+<arg>${LogoutEle}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20211107 12:56:43.333" level="INFO">Executing JavaScript:
+arguments[0].click();
+By using argument:
+'&lt;selenium.webdriver.remote.webelement.WebElement (session="f25fb62f8f01a80c8ec8d3d1fedb11f9", element="4d442980-6a97-4954-82ab-54e6828916e7")&gt;'</msg>
+<status status="PASS" starttime="20211107 12:56:43.332" endtime="20211107 12:56:44.187"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LoginPanel}</var>
+<arg>id:logInPanelHeading</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20211107 12:56:44.229" level="INFO">${LoginPanel} = LOGIN Panel</msg>
+<status status="PASS" starttime="20211107 12:56:44.187" endtime="20211107 12:56:44.229"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${LoginPanel}</arg>
+<arg>LOGIN Panel</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20211107 12:56:44.229" endtime="20211107 12:56:44.230"/>
+</kw>
+<status status="PASS" starttime="20211107 12:56:43.258" endtime="20211107 12:56:44.230"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20211107 12:56:44.230" endtime="20211107 12:56:46.441"/>
+</kw>
+<doc>This test case is to check successfull logout</doc>
+<status status="PASS" starttime="20211107 12:56:35.605" endtime="20211107 12:56:46.442"/>
+</test>
+<status status="PASS" starttime="20211107 12:56:35.375" endtime="20211107 12:56:46.456"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Test 002">Test 002</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
