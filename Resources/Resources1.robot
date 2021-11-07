@@ -40,6 +40,12 @@ Logout Successfully
     ${LoginPanel}=  Get Text  id:logInPanelHeading
     Should Be Equal As Strings  ${LoginPanel}  LOGIN Panel
 
+Click Admin
+    Click Element  xpath://div[@id='mainMenu']/ul/li/a/b[text()='Admin']
+
+
+
+
 
 
 
